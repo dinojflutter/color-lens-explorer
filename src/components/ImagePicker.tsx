@@ -65,7 +65,7 @@ export default function ImagePicker() {
     reader.readAsDataURL(file);
   };
 
-  const handleImageClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleImageClick = (e: React.MouseEvent) => {
     if (!canvasRef.current || !containerRef.current) return;
     
     const rect = containerRef.current.getBoundingClientRect();
@@ -93,7 +93,7 @@ export default function ImagePicker() {
     }
   };
 
-  const handleCameraCapture = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleCameraCapture = (e: React.MouseEvent) => {
     if (!videoRef.current || !containerRef.current) return;
     
     const video = videoRef.current;
