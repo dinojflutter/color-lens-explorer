@@ -29,9 +29,9 @@ export default function AdPlaceholder({ type = 'banner' }: AdPlaceholderProps) {
       }`}
     >
       <div className="text-center">
-        <p className="text-sm font-medium">विज्ञापन प्लेसहोल्डर</p>
+        <p className="text-sm font-medium">Advertisement Placeholder</p>
         <p className="text-xs opacity-75">
-          यहाँ AdMob विज्ञापन देखिनेछ
+          AdMob advertisement will appear here
         </p>
       </div>
     </div>

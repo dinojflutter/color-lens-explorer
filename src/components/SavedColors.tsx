@@ -5,7 +5,7 @@ import { Trash2, AlertCircle } from 'lucide-react';
 import { useColor } from '@/context/ColorContext';
 import ColorSwatch from './ColorSwatch';
 import { Button } from '@/components/ui/button';
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function SavedColors() {
@@ -18,9 +18,9 @@ export default function SavedColors() {
         <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-muted mb-4">
           <AlertCircle className="h-6 w-6 text-muted-foreground" />
         </div>
-        <h3 className="text-lg font-medium">कुनै रङ छैन</h3>
+        <h3 className="text-lg font-medium">No Colors</h3>
         <p className="text-sm text-muted-foreground mt-2">
-          तपाइँले अहिलेसम्म कुनै पनि रङ सुरक्षित गर्नुभएको छैन
+          You haven't saved any colors yet
         </p>
       </div>
     );
@@ -29,28 +29,28 @@ export default function SavedColors() {
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center">
-        <h2 className="text-xl font-semibold">सुरक्षित रङ्गहरू</h2>
+        <h2 className="text-xl font-semibold">Saved Colors</h2>
         <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <AlertDialogTrigger asChild>
             <Button variant="destructive" size="sm">
               <Trash2 className="h-4 w-4 mr-2" />
-              सबै मेटाउनुहोस्
+              Clear All
             </Button>
           </AlertDialogTrigger>
           <AlertDialogContent>
             <AlertDialogHeader>
-              <AlertDialogTitle>सबै रङ्गहरू मेटाउने हो?</AlertDialogTitle>
+              <AlertDialogTitle>Clear all colors?</AlertDialogTitle>
               <AlertDialogDescription>
-                यो कार्य अपरिवर्तनीय छ। यसले तपाइँका सबै सुरक्षित रङ्गहरू मेटाउनेछ।
+                This action cannot be undone. This will permanently delete all your saved colors.
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
-              <AlertDialogCancel>रद्द गर्नुहोस्</AlertDialogCancel>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
               <AlertDialogAction onClick={() => {
                 clearSavedColors();
                 setIsDialogOpen(false);
               }}>
-                मेटाउनुहोस्
+                Delete All
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>

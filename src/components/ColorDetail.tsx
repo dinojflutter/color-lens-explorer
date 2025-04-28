@@ -20,14 +20,14 @@ export default function ColorDetail({ color }: ColorDetailProps) {
   const handleCopyHex = () => {
     navigator.clipboard.writeText(color.hex);
     setCopied('hex');
-    toast({ description: 'HEX कोड कपी गरियो!' });
+    toast({ description: 'HEX code copied!' });
     setTimeout(() => setCopied(null), 2000);
   };
 
   const handleCopyRgb = () => {
     navigator.clipboard.writeText(color.rgb);
     setCopied('rgb');
-    toast({ description: 'RGB कोड कपी गरियो!' });
+    toast({ description: 'RGB code copied!' });
     setTimeout(() => setCopied(null), 2000);
   };
 
@@ -51,7 +51,7 @@ export default function ColorDetail({ color }: ColorDetailProps) {
           style={{ color: textColor }}
         >
           <h2 className="text-3xl font-bold drop-shadow-sm">
-            {color.name || 'रङ्ग छनोट'}
+            {color.name || 'Selected Color'}
           </h2>
         </div>
       </div>
@@ -98,7 +98,7 @@ export default function ColorDetail({ color }: ColorDetailProps) {
           className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/90"
         >
           <Heart className="h-4 w-4" />
-          रङ्ग सुरक्षित गर्नुहोस्
+          Save Color
         </Button>
       </div>
     </motion.div>

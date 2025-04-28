@@ -13,12 +13,12 @@ export default function Header() {
       <div className="flex items-center gap-2 mb-2">
         <EyeIcon className="h-6 w-6 text-primary" />
         <h1 className="text-2xl font-bold tracking-tight">
-          <span className="text-primary">रङ</span> पिकर
+          <span className="text-primary">Color</span> Picker
         </h1>
       </div>
       <p className="text-muted-foreground max-w-lg">
-        तस्विर अपलोड गर्नुहोस् वा क्यामेरा प्रयोग गरेर कुनै पनि वस्तुको रङ पत्ता लगाउनुहोस्। 
-        हेक्स र आरजीबी कोडहरू स्वचालित रूपमा उत्पन्न हुनेछन्।
+        Upload an image or use your camera to discover colors from any object.
+        HEX and RGB codes will be automatically generated.
       </p>
     </motion.header>
   );

@@ -25,7 +25,7 @@ const Index = () => {
             className="space-y-6"
           >
             <div className="bg-card rounded-xl p-6 shadow-sm">
-              <h2 className="text-xl font-semibold mb-4">रङ पत्ता लगाउनुहोस्</h2>
+              <h2 className="text-xl font-semibold mb-4">Pick a Color</h2>
               <ImagePicker />
             </div>
             
@@ -43,9 +43,9 @@ const Index = () => {
                 <ColorDetail color={currentColor} />
               ) : (
                 <div className="py-16 text-center">
-                  <h3 className="text-lg font-medium mb-2">कुनै रङ छनौट गरिएको छैन</h3>
+                  <h3 className="text-lg font-medium mb-2">No Color Selected</h3>
                   <p className="text-sm text-muted-foreground">
-                    बायाँतर्फको तस्बिरमा क्लिक गरेर रङ छान्नुहोस्
+                    Click anywhere on the image to select a color
                   </p>
                 </div>
               )}
