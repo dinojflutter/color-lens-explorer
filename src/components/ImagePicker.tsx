@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Upload, Camera } from 'lucide-react';
@@ -29,8 +28,8 @@ export default function ImagePicker() {
     onError: () => {
       toast({
         variant: "destructive",
-        title: "क्यामेरा त्रुटि",
-        description: "क्यामेरा पहुँच प्राप्त गर्न सकिएन। अनुमति दिनुहोस् वा अन्य उपकरण प्रयोग गर्नुहोस्।"
+        title: "Camera Error",
+        description: "Could not access camera. Please grant permission or try another device."
       });
       setActiveTab('upload');
     }
@@ -196,11 +195,11 @@ export default function ImagePicker() {
         <TabsList className="w-full">
           <TabsTrigger value="upload" className="flex-1">
             <Upload className="h-4 w-4 mr-2" />
-            तस्विर अपलोड गर्नुहोस्
+            Upload Image
           </TabsTrigger>
           <TabsTrigger value="camera" className="flex-1" disabled={!hasCamera}>
             <Camera className="h-4 w-4 mr-2" />
-            क्यामेरा
+            Camera
           </TabsTrigger>
         </TabsList>
         
@@ -224,16 +223,16 @@ export default function ImagePicker() {
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-muted">
                   <Upload className="h-8 w-8 text-muted-foreground" />
                 </div>
-                <h3 className="mt-4 text-lg font-semibold">रंग पत्ता लगाउन चित्र अपलोड गर्नुहोस्</h3>
+                <h3 className="mt-4 text-lg font-semibold">Upload an image to detect colors</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  PNG, JPG वा GIF फाइलहरू। अधिकतम आकार 10MB।
+                  PNG, JPG or GIF files. Maximum size 10MB.
                 </p>
                 <Button
                   variant="secondary"
                   className="mt-4"
                   onClick={() => fileInputRef.current?.click()}
                 >
-                  चित्र चयन गर्नुहोस्
+                  Select Image
                 </Button>
               </motion.div>
             ) : (
@@ -267,10 +266,10 @@ export default function ImagePicker() {
                     setPointer({ x: -20, y: -20, show: false });
                   }}
                 >
-                  नयाँ चित्र
+                  New Image
                 </Button>
                 <p className="text-sm text-muted-foreground self-center">
-                  तस्वीरमा कुनै पनि ठाउँमा क्लिक गरेर रङ छान्नुहोस्
+                  Click anywhere on the image to select a color
                 </p>
               </div>
             )}
@@ -310,7 +309,7 @@ export default function ImagePicker() {
             </div>
             
             <p className="text-sm text-muted-foreground text-center">
-              क्यामेरामा कुनै पनि ठाउँमा क्लिक गरेर रङ छान्नुहोस्
+              Click anywhere on the camera feed to select a color
             </p>
           </div>
         </TabsContent>

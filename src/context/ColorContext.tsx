@@ -36,8 +36,8 @@ export const ColorProvider = ({ children }: { children: ReactNode }) => {
     });
 
     toast({
-      title: '색상 저장됨',
-      description: `${color.hex} 색상이 저장되었습니다.`,
+      title: 'Color Saved',
+      description: `Color ${color.hex} has been saved.`,
     });
   }, []);
 
@@ -49,8 +49,8 @@ export const ColorProvider = ({ children }: { children: ReactNode }) => {
     });
 
     toast({
-      title: '색상 삭제됨',
-      description: '색상이 컬렉션에서 삭제되었습니다.',
+      title: 'Color Deleted',
+      description: 'Color has been removed from your collection.',
     });
   }, []);
 
@@ -58,8 +58,8 @@ export const ColorProvider = ({ children }: { children: ReactNode }) => {
     setSavedColors([]);
     localStorage.removeItem('savedColors');
     toast({
-      title: '모든 색상 삭제됨',
-      description: '저장된 모든 색상이 삭제되었습니다.',
+      title: 'All Colors Deleted',
+      description: 'All saved colors have been deleted.',
     });
   }, []);
 
