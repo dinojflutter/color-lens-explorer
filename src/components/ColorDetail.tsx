@@ -20,14 +20,14 @@ export default function ColorDetail({ color }: ColorDetailProps) {
   const handleCopyHex = () => {
     navigator.clipboard.writeText(color.hex);
     setCopied('hex');
-    toast({ description: 'HEX code copied!' });
+    toast({ description: 'HEX code copied to clipboard!' });
     setTimeout(() => setCopied(null), 2000);
   };
 
   const handleCopyRgb = () => {
     navigator.clipboard.writeText(color.rgb);
     setCopied('rgb');
-    toast({ description: 'RGB code copied!' });
+    toast({ description: 'RGB code copied to clipboard!' });
     setTimeout(() => setCopied(null), 2000);
   };
 
@@ -96,6 +96,7 @@ export default function ColorDetail({ color }: ColorDetailProps) {
         <Button 
           onClick={handleSave}
           className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/90"
+          aria-label="Save this color"
         >
           <Heart className="h-4 w-4" />
           Save Color

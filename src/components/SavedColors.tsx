@@ -91,6 +91,7 @@ export default function SavedColors() {
                   whileHover={{ opacity: 1 }}
                   className="absolute -top-1 -right-1 bg-destructive text-destructive-foreground rounded-full p-1 shadow-sm"
                   onClick={() => deleteColor(color.id)}
+                  aria-label="Delete color"
                 >
                   <Trash2 className="h-3 w-3" />
                 </motion.button>

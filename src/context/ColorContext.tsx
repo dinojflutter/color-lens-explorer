@@ -37,7 +37,7 @@ export const ColorProvider = ({ children }: { children: ReactNode }) => {
 
     toast({
       title: 'Color Saved',
-      description: `Color ${color.hex} has been saved.`,
+      description: `The color ${color.hex} has been added to your collection.`,
     });
   }, []);
 
@@ -49,8 +49,8 @@ export const ColorProvider = ({ children }: { children: ReactNode }) => {
     });
 
     toast({
-      title: 'Color Deleted',
-      description: 'Color has been removed from your collection.',
+      title: 'Color Removed',
+      description: 'The color has been removed from your collection.',
     });
   }, []);
 
@@ -58,8 +58,8 @@ export const ColorProvider = ({ children }: { children: ReactNode }) => {
     setSavedColors([]);
     localStorage.removeItem('savedColors');
     toast({
-      title: 'All Colors Deleted',
-      description: 'All saved colors have been deleted.',
+      title: 'Collection Cleared',
+      description: 'All saved colors have been removed from your collection.',
     });
   }, []);
 
