@@ -12,16 +12,22 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    // Always default to light mode first
-    const savedTheme = localStorage.getItem('color-picker-theme');
-    if (savedTheme === 'dark') {
-      return 'dark';
+    // Check if we're in the browser environment
+    if (typeof window !== 'undefined') {
+      // Always default to light mode first
+      const savedTheme = localStorage.getItem('color-picker-theme');
+      if (savedTheme === 'dark') {
+        return 'dark';
+      }
     }
     // Default to light mode regardless of system preference
     return 'light';
   });
 
   useEffect(() => {
+    // Safety check for SSR/deployment environments
+    if (typeof window === 'undefined') return;
+
     // Update document class when theme changes
     const root = window.document.documentElement;
     root.classList.remove('light', 'dark');
